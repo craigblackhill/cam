@@ -1,44 +1,35 @@
-"use strict";
-let capture;
+function setup() { 
+  createCanvas(400, 300);
+  img = createCapture(VIDEO);
+	img.hide();
+  img.size(800, 600);
 
-function setup() {
-	createCanvas(640, 480);
-	capture = createCapture(VIDEO);
-	capture.hide();
-	capture.size(640, 480);
 }
-
 function draw() {
-	background(0);
-	noStroke();
-	fill(255);
-	
-
-	if (capture.width > 0) {
-		let img = capture.get(0, 0, capture.width, capture.height);
-		img.loadPixels();
-
-		const step = 10;
-		for (var y = step; y < img.height; y += step) {
-			for (var x = step; x < img.width; x += step) {
-				var  i = y * img.width + (img.width-x-1);	
-				// const darkness = (255 - img.pixels[i * 4]) / 255;
+	img.loadPixels();
+  for (var y=img.height ; y>0; y-=10)
+  {
+    for (var x=img.width; x>0; x-=10)
+    {
+      var p = img.pixels[(y*img.width-x)*4];
+      if (p < 255 & p > 200 )
+      {
+        fill(p*2,p,p*3);
 				
-				const darkness = (255 - img.pixels[i * 4]) / 255;
-				
-				let sX = x * width / img.width;
-				let sY = y * height / img.height;
-				if (darkness > 0.75) {
-					fill('#ededc5');
-					circle(sX, sY, step);
-				}else
-				if (darkness > 0.5) {
-					fill('#1a1a19');
-					circle(sX, sY, step);
-				}
-								
-			}
-		}
-	}
-	
+		 ellipse(x, y, 11, 11);
+      }
+           if (p < 200 & p > 100 )
+      {
+        fill(22,p,p);
+       ellipse(x, y, 22, 22);
+
+      }
+			          if (p < 100 & p > 0 )
+      {
+        fill(220,p,222);
+       ellipse(x, y, 6, 6);
+
+      }
+    }
+  }
 }
