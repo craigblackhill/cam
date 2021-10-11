@@ -1,11 +1,18 @@
-
 function setup() { 
-  createCanvas(400, 300);
+  createCanvas(displayWidth, displayHeight);
   img = createCapture(VIDEO);
 	img.hide();
-//  img.size(800, 600);
+
 
 }
+function mousePressed() {
+
+    let fs = fullscreen();
+
+    fullscreen(!fs); 
+}
+
+
 function draw() {
 	img.loadPixels();
   for (var y=img.height ; y>0; y-=10)
