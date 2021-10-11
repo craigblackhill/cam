@@ -15,6 +15,16 @@ function setup() {
 	init();
 }
 
+function mousePressed() {
+      
+    // Set the value of fullscreen
+    // into the variable
+    let fs = fullscreen();
+      
+    // Call to fullscreen function
+    fullscreen(!fs); 
+}
+
 function draw()
 {
 	rote += 0.0025 + sin(frameCount/100)*0.001;
