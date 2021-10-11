@@ -9,7 +9,6 @@ function setup() {
   createCanvas(400, 300);
   img = createCapture(VIDEO);
 	img.hide();
-  img.size(800, 600);
 
 }
 function draw() {
