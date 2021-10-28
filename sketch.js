@@ -1,4 +1,3 @@
-
 function mousePressed() {
 
     let fs = fullscreen();
@@ -6,7 +5,7 @@ function mousePressed() {
     fullscreen(!fs); 
 }
 function setup() { 
-  createCanvas(400, 300);
+  createCanvas(700, 600);
   img = createCapture(VIDEO);
 	img.hide();
 
@@ -26,13 +25,13 @@ function draw() {
       }
            if (p < 200 & p > 100 )
       {
-        fill(22,p,p);
+        fill(p,255,p);
        ellipse(x, y, 22, 22);
 
       }
 			          if (p < 100 & p > 0 )
       {
-        fill(220,p,222);
+        fill(0,p,0);
        ellipse(x, y, 6, 6);
 
       }
