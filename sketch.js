@@ -8,6 +8,7 @@ function setup() {
   createCanvas(700, 600);
   img = createCapture(VIDEO);
 	img.hide();
+	orientation(LANDSCAPE);
 
 }
 function draw() {
