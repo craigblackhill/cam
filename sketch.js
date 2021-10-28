@@ -1,9 +1,3 @@
-function mousePressed() {
-
-    let fs = fullscreen();
-
-    fullscreen(!fs); 
-}
 function setup() { 
   createCanvas(400, 300);
   img = createCapture(VIDEO);
